@@ -1,0 +1,11 @@
+.item {
+    color: #b40202;
+}
+.item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+}
+.like {
+    color: #0808ad;
+}
