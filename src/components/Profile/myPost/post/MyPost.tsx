@@ -1,18 +1,31 @@
-import React from 'react';
+import React, {FC} from 'react';
 import classes from '../post/MyPost.module.css'
 import Post from "./Post";
 
-const MyPost = () => {
+export type PostDataTypeProps = {
+    id?: number,
+    message?: string,
+    likeCount?: number
+}
+const MyPost: FC<PostDataTypeProps> = (props) => {
+    let postData = [
+        {id: 1, message: 'Hi, how are you?', likeCount: 15},
+        {id: 2, message: 'it`s my first post', likeCount: 25},
+    ]
+    let postDataElements = postData.map(p => <Post message={p.message} likeCount={p.likeCount} id={p.id}/>)
     return (
-        <div>
-            My post
+        <div className={classes.postsBlock}>
+            <h3>My post</h3>
             <div>
-                <textarea></textarea>
-                <button>Add post</button>
+                <div>
+                    <textarea></textarea>
+                </div>
+                <div>
+                    <button>Add post</button>
+                </div>
             </div>
             <div className={classes.posts}>
-                <Post message='Hi, how are you?' likeCount='15'/>
-                <Post message="it`s my first post" likeCount='25'/>
+                {postDataElements}
             </div>
         </div>
     )

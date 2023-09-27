@@ -1,11 +1,13 @@
 import React from 'react';
 import classes from '../post/Post.module.css'
+import {PostDataTypeProps} from "./MyPost";
 
-type MessagePropsType = {
-    message: string,
-    likeCount: string
-}
-const Post = (props: MessagePropsType) => {
+// export type MessagePropsType = {
+//     id?: number
+//     message: string,
+//     likeCount: number
+// }
+const Post = (props: PostDataTypeProps) => {
     return (
         <div className={classes.item}>
             <img
